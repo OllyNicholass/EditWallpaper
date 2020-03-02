@@ -32,17 +32,17 @@ namespace EditWallpaper
             }
             catch (System.Security.SecurityException ex)
             {
-                ConsoleExtentions.WriteLine(ex.Message, ConsoleColor.Red);
+                ConsoleExtensions.WriteLine(ex.Message, ConsoleColor.Red);
             }
             catch (Exception ex)
             {
-                ConsoleExtentions.WriteLine(ex.Message, ConsoleColor.Red);
+                ConsoleExtensions.WriteLine(ex.Message, ConsoleColor.Red);
             }
         }
 
         private static int? GetWallpaperStyle()
         {
-            ConsoleExtentions.Write("Wallpaper Style: ", ConsoleColor.Yellow);
+            ConsoleExtensions.Write("Wallpaper Style: ", ConsoleColor.Yellow);
             dynamic input = Console.ReadLine();
 
             dynamic selected;
@@ -62,18 +62,18 @@ namespace EditWallpaper
 
             if (selected.Value == null)
             {
-                ConsoleExtentions.WriteLine($"You have not selected a valid style. Please choose from the list below.", ConsoleColor.Red);
+                ConsoleExtensions.WriteLine($"You have not selected a valid style. Please choose from the list below.", ConsoleColor.Red);
                 Display.DisplayStyleGuideTable();
                 return null;
             }
 
-            ConsoleExtentions.WriteLine($"Style successfully selected: {selected.Value}", ConsoleColor.Green);
+            ConsoleExtensions.WriteLine($"Style successfully selected: {selected.Value}", ConsoleColor.Green);
             return selected.Key;
         }
 
         private static string GetWallpaperPath()
         {
-            ConsoleExtentions.Write("Wallpaper Location: ", ConsoleColor.Yellow);
+            ConsoleExtensions.Write("Wallpaper Location: ", ConsoleColor.Yellow);
             var input = Console.ReadLine();
 
             if (File.Exists(input))
@@ -95,22 +95,22 @@ namespace EditWallpaper
 
                 if (supportedFileExtensions.Where(e => e.ToLower() == ext).Count() > 0)
                 {
-                    ConsoleExtentions.WriteLine($"File successfully selected: {input}", ConsoleColor.Green);
+                    ConsoleExtensions.WriteLine($"File successfully selected: {input}", ConsoleColor.Green);
                     return input;
                 }
                 else
                 {
-                    ConsoleExtentions.WriteLine($"The {ext} extension is not supported. Please choose from the file types listed below and try again. ", ConsoleColor.Red);
+                    ConsoleExtensions.WriteLine($"The {ext} extension is not supported. Please choose from the file types listed below and try again. ", ConsoleColor.Red);
                     foreach (var extension in supportedFileExtensions)
                     {
-                        ConsoleExtentions.WriteLine(extension, ConsoleColor.DarkGray);
+                        ConsoleExtensions.WriteLine(extension, ConsoleColor.DarkGray);
                     }
                     return "";
                 }
             }
             else
             {
-                ConsoleExtentions.WriteLine("This file does not exist or could not be found. Please check the path and try again.", ConsoleColor.Red);
+                ConsoleExtensions.WriteLine("This file does not exist or could not be found. Please check the path and try again.", ConsoleColor.Red);
                 return "";
             }
         }

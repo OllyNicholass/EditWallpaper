@@ -8,25 +8,25 @@ namespace EditWallpaper
 
         public static void DisplayInfo()
         {
-            ConsoleExtentions.WriteLine("Wallpaper Changer v1.0.0", ConsoleColor.Yellow);
+            ConsoleExtensions.WriteLine("Wallpaper Changer v1.0.0", ConsoleColor.Yellow);
             Console.WriteLine();
             DisplayStyleGuideTable();
 
             // Correct Example
             Console.WriteLine();
-            ConsoleExtentions.WriteLine("Example (Correct Usage)", ConsoleColor.Green);
-            ConsoleExtentions.Write("\tWallpaper Location: ", ConsoleColor.Green);
-            ConsoleExtentions.WriteLine("C:\\Wallpapers\\wallpaper.jpg", ConsoleColor.DarkGray);
-            ConsoleExtentions.Write("\tWallpaper Style: ", ConsoleColor.Green);
-            ConsoleExtentions.WriteLine("5", ConsoleColor.DarkGray);
+            ConsoleExtensions.WriteLine("Example (Correct Usage)", ConsoleColor.Green);
+            ConsoleExtensions.Write("\tWallpaper Location: ", ConsoleColor.Green);
+            ConsoleExtensions.WriteLine("C:\\Wallpapers\\wallpaper.jpg", ConsoleColor.DarkGray);
+            ConsoleExtensions.Write("\tWallpaper Style: ", ConsoleColor.Green);
+            ConsoleExtensions.WriteLine("5", ConsoleColor.DarkGray);
 
             // Incorrect Example
             Console.WriteLine();
-            ConsoleExtentions.WriteLine("Example (Incorrect Usage)", ConsoleColor.Red);
-            ConsoleExtentions.Write("\tWallpaper Location: ", ConsoleColor.Red);
-            ConsoleExtentions.WriteLine("https://i.ytimg.com/vi/hAq443fhyDo/maxresdefault.jpg", ConsoleColor.DarkGray);
-            ConsoleExtentions.Write("\tWallpaper Style: ", ConsoleColor.Red);
-            ConsoleExtentions.WriteLine("big", ConsoleColor.DarkGray);
+            ConsoleExtensions.WriteLine("Example (Incorrect Usage)", ConsoleColor.Red);
+            ConsoleExtensions.Write("\tWallpaper Location: ", ConsoleColor.Red);
+            ConsoleExtensions.WriteLine("https://i.ytimg.com/vi/hAq443fhyDo/maxresdefault.jpg", ConsoleColor.DarkGray);
+            ConsoleExtensions.Write("\tWallpaper Style: ", ConsoleColor.Red);
+            ConsoleExtensions.WriteLine("big", ConsoleColor.DarkGray);
         }
 
         public static void DisplayStyleGuideTable()

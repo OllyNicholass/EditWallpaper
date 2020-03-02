@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EditWallpaper
 {
-    public static class ConsoleExtentions
+    public static class ConsoleExtensions
     {
         public static void WriteLine(string str, ConsoleColor consoleColor)
         {
