@@ -30,9 +30,13 @@ namespace EditWallpaper
             {
                 ChangeWallpaper(wallpaperPath, (int)wallpaperStyle);
             }
-            catch (System.Security.SecurityException)
+            catch (System.Security.SecurityException ex)
             {
-                ConsoleExtentions.WriteLine("You do not have access to the registry. Please try running this as an Administrator.", ConsoleColor.Red);
+                ConsoleExtentions.WriteLine(ex.Message, ConsoleColor.Red);
+            }
+            catch (Exception ex)
+            {
+                ConsoleExtentions.WriteLine(ex.Message, ConsoleColor.Red);
             }
         }
 
