@@ -49,11 +49,11 @@ namespace EditWallpaper
             {
                 // Converts to an int
                 input = value;
-                selected = WallpaperSettings.Styles.FirstOrDefault(s => s.Key == input);
+                selected = WallpaperStyle.Styles.FirstOrDefault(s => s.Key == input);
             }
             else
             {
-                selected = WallpaperSettings.Styles.FirstOrDefault(s => s.Value == input);
+                selected = WallpaperStyle.Styles.FirstOrDefault(s => s.Value == input);
             }
 
             if (selected.Value == null)

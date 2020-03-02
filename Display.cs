@@ -36,7 +36,7 @@ namespace EditWallpaper
             PrintLine();
             PrintRow("Style", "Value");
             PrintLine();
-            foreach (var style in WallpaperSettings.Styles)
+            foreach (var style in WallpaperStyle.Styles)
             {
                 PrintRow(style.Value, style.Key.ToString());
             }

@@ -2,7 +2,7 @@
 
 namespace EditWallpaper
 {
-    public static class WallpaperSettings
+    public static class WallpaperStyle
     {
         public static Dictionary<int, string> Styles
         {
