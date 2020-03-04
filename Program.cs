@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Microsoft.Win32;
 using System.Linq;
+using System.Diagnostics;
 
 namespace EditWallpaper
 {
@@ -37,6 +38,44 @@ namespace EditWallpaper
             catch (Exception ex)
             {
                 ConsoleExtensions.WriteLine(ex.Message, ConsoleColor.Red);
+            }
+
+            var restartExplorer = RestartExplorer();
+            while (restartExplorer == null)
+            {
+                restartExplorer = RestartExplorer();
+            }
+
+            ConsoleExtensions.WriteLine("It is now safe to close the application.", ConsoleColor.Yellow);
+            Console.ReadLine();
+
+        }
+
+        private static int? RestartExplorer()
+        {
+            ConsoleExtensions.WriteLine("Windows Explorer needs to restart in order for this to take effect.", ConsoleColor.Yellow);
+            ConsoleExtensions.Write("Do you wish to restart Explorer? [y, n]: ", ConsoleColor.Yellow);
+
+            var input = Console.ReadLine();
+
+            if (input.ToLower() == "y")
+            {
+                var processes = Process.GetProcesses();
+                var explorer = processes.First(p => p.ProcessName == "explorer");
+                explorer.Kill();
+                Process.Start("explorer.exe");
+
+                ConsoleExtensions.WriteLine("Windows Explorer has now been restarted.", ConsoleColor.Green);
+                return 1;
+            }
+            else if (input.ToLower() == "n")
+            {
+                return 0;
+            }
+            else
+            {
+                ConsoleExtensions.WriteLine($"{input}, is not a valid input. Please enter, 'y' or 'n'", ConsoleColor.Red);
+                return null;
             }
         }
 
