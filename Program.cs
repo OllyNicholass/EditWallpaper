@@ -96,7 +96,7 @@ namespace EditWallpaper
             }
             else
             {
-                selected = WallpaperStyle.Styles.FirstOrDefault(s => s.Value == input);
+                selected = WallpaperStyle.Styles.FirstOrDefault(s => s.Value.ToLower() == input.ToLower());
             }
 
             if (selected.Value == null)
